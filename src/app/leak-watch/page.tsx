@@ -32,11 +32,19 @@ const LeakWatchPage = () => {
 
   return (
     <div className="container mx-auto p-4 sm:p-8">
-      <header className="mb-8">
-        <h1 className="text-4xl font-bold tracking-tight">Leak Watch</h1>
-        <p className="text-gray-500 mt-2">
-          Public source monitoring for new data leaks, dumps, and compromises.
-        </p>
+      <header className="mb-8 flex justify-between items-center">
+        <div>
+            <h1 className="text-4xl font-bold tracking-tight">Leak Watch</h1>
+            <p className="text-gray-500 mt-2">
+            Public source monitoring for new data leaks, dumps, and compromises.
+            </p>
+        </div>
+        <a
+            href="/leak-watch/watchlist"
+            className="px-4 py-2 bg-gray-700 text-white rounded-md hover:bg-gray-800"
+        >
+            Manage Watchlist
+        </a>
       </header>
 
       <div className="flex items-center justify-between mb-6">
