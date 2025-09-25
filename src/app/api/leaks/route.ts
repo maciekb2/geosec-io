@@ -2,12 +2,13 @@ import { NextResponse } from 'next/server';
 import { harvest } from '../../../lib/server/harvester';
 import { extractIOCs } from '../../../lib/server/ioc-extractor';
 import { calculateRiskScore } from '../../../lib/server/scoring';
-
-// Mock user watchlist
-const userWatchlist = ['example.com', 'internal.net'];
+import store from '../../../lib/server/store';
 
 export async function GET() {
   try {
+    // Get the current watchlist from the store
+    const userWatchlist = store.watchlist;
+
     // 1. Harvest data from sources
     const harvestedItems = await harvest();
 
